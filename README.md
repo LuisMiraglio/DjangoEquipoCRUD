@@ -1,6 +1,6 @@
 # Proyecto CRUD para la administración de equipos
 
-Este proyecto fue creado como prueba para exponer mis conocimientos en el framework Django. Es una aplicación web funcional que permite gestionar equipos ZHONE mediante un sistema CRUD, con inicio de sesión y registro de usuarios.
+Este proyecto fue creado como prueba para exponer mis conocimientos en el framework Django. Es una aplicación web funcional que permite gestionar equipos mediante un sistema CRUD, con inicio de sesión y registro de usuarios.
 
 ## Funcionalidades
 
