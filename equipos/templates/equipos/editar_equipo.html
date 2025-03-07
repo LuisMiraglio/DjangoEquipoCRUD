@@ -1,0 +1,55 @@
+{% extends "equipos/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center">Editar Equipo</h1>
+    <div class="card shadow p-4 mt-3">
+        
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li><strong>{{ field }}</strong>: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="id_modelo" class="form-label">Modelo</label>
+                {{ form.modelo }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_numero_serie" class="form-label">Número de Serie</label>
+                {{ form.numero_serie }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_mac_address" class="form-label">MAC Address</label>
+                {{ form.mac_address }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_estado" class="form-label">Estado</label>
+                {{ form.estado }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_descripcion" class="form-label">Descripción</label>
+                {{ form.descripcion }}
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="{% url 'lista_equipos' equipo_id=equipo.id %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
